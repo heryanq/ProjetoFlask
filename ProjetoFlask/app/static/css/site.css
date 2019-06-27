@@ -1,0 +1,169 @@
+body {
+    font-family: 'Signika', sans-serif;
+}
+
+.active a{
+    color: black !important;
+    background-color: white !important;
+}
+
+.navbar-cor {
+    background-color: black;
+    font-family: 'Barlow', sans-serif;
+}
+
+.navbar-header a {
+    color: white !important;
+}
+
+.cor-fonte {
+    color: yellow;
+}
+
+.img-padrao {
+    height: 359px;
+    width: 351px;
+}
+
+.video-padrao {
+    width: 420px;
+    height: 315px;
+}
+
+.alinhar-texto {
+    text-align: justify;
+}
+
+.alinhar-img {
+    align-content: center;
+}
+
+.margem-esquerda {
+    padding: 10px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  text-align: center;
+}
+
+#barra_navegação li a {
+    color: white;
+}
+
+.listaMusicas {
+    margin: auto;
+    text-align: center;
+    column-span: 6;
+    padding: 2px;
+    border-spacing: 2px;
+    border: 1px solid black;
+}
+
+.listaArtistas {
+    width: 25%;
+    margin: auto;
+    text-align: center;
+    column-span: 6;
+    padding: 2px;
+    border-spacing: 2px;
+    border: 1px solid black;
+}
+
+.linhaTipo1 {
+    background-color: #ffffff;
+    font-family: 'Barlow', sans-serif;
+}
+
+.linhaTipo2 {
+    background-color: #ffffffaf;
+    font-family: 'Barlow', sans-serif;
+}
+
+.linhaTipo3 td{
+    background-color: #ffd000;
+    font-family: bold 'Barlow', sans-serif;
+    font-size: 17px;
+}
+
+.borda-coluna {
+    border: 1px;
+    border-color: black
+  }
+
+
+.bg-steel {
+  background-color: #5f788a;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.article-title {
+  color: #444444;
+}
+
+a.article-title:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}

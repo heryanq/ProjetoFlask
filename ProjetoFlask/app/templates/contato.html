@@ -1,0 +1,29 @@
+{% extends "defaultLayout.html" %}
+
+<head>
+    {% block title %} Contato {% endblock %}
+</head>
+
+<body>
+
+    {% block content %}
+
+    <div class="container.fluid row">
+        <h2 class="text-uppercase text-center">Contato</h2>
+    </div>
+
+	<div class="col-md-offset-4 container.fluid row">
+		<form>
+			<ul>
+				<li><input size="50px" placeholder="Seu Nome"></li>
+				<li><input size="50px" placeholder="Email"></li>
+				<li><input size="50px" placeholder="Motivo do contato"></li>
+				<li><button type="submit"> Enviar <i><img src="https://emailmonks.com/common_file/images/btn-arrow.png"></i></button></li>
+			</ul>
+		</form>
+	</div>
+
+    {% endblock %}
+
+</body>
+</html>

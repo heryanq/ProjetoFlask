@@ -1,0 +1,10 @@
+wtforms
+flask
+flask_sqlalchemy
+flask_script
+flask_migrate
+flask_wtf
+flask-bcrypt
+flask-login
+Pillow
+flask-admin

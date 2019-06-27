@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block head %}
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<link href="https://fonts.googleapis.com/css?family=Barlow|Signika" rel="stylesheet">
+	<link rel="stylesheet" href="../static/css/site.css">
+
+    {% endblock %}
+</head>
+
+<body>
+	<!-- Barra de navegação -->
+	<nav class="navbar navbar-default navbar-cor">
+		<div class="container">
+
+			<div class="navbar-header">
+                <a href="/" class="navbar-brand">Cena RAP Nacional</a>
+                <button type="button" class="navbar-toggle glyphicon glyphicon-menu-hamburger"
+                data-toggle="collapse" data-target="#barra_navegação"></button>
+			</div>
+
+			<ul id="barra_navegação" class="nav navbar-nav navbar-right collapse navbar-collapse cor-fonte">
+				{% if current_user.is_authenticated %}
+                    <li><a href="{{ url_for('main.index') }}">Início</a></li>
+                    <li><a href="{{ url_for('main.noticias') }}">Noticias</a></li>
+                    <li><a href="{{ url_for('main.topMusicas') }}">Top Músicas</a></li>
+                    <li><a href="{{ url_for('main.topArtistas') }}">Top Artistas</a></li>
+                    <li><a href="{{ url_for('main.contato') }}">Contato</a></li>
+                    <li><a href="{{ url_for('users.account') }}">Account</a></li>
+                    <li><a href="{{ url_for('posts.new_post') }}">New Post</a></li>
+                    <li><a href="{{ url_for('users.logout') }}">Logout</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('main.index') }}">Início</a></li>
+                    <li><a href="{{ url_for('main.noticias') }}">Noticias</a></li>
+                    <li><a href="{{ url_for('main.topMusicas') }}">Top Músicas</a></li>
+                    <li><a href="{{ url_for('main.topArtistas') }}">Top Artistas</a></li>
+                    <li><a href="{{ url_for('main.contato') }}">Contato</a></li>
+                    <li><a href="{{ url_for('users.login') }}">Log In</a></li>
+                    <li><a href="{{ url_for('users.register') }}">Register</a></li>
+                {% endif %}
+			</ul>
+
+		</div>
+	</nav>
+
+    <main class="container">
+      <div class="row">
+        <div class="col-md-8">
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+        </div>
+      </div>
+
+    {% block content %}
+    {% endblock %}
+
+    </main>
+
+    {% block footer %}
+
+    <div class="footer">
+        <p>Copyright © 2019 Heryan Queiroz</p>
+	</div>
+
+    {% endblock %}
+
+</body>
+</html>
