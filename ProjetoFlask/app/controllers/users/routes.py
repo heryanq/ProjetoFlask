@@ -3,7 +3,7 @@ from flask_login import current_user, login_user, logout_user, login_required
 
 from app import bcrypt, db
 from app.controllers.users.utils import save_picture
-from app.models.tables import User
+from app.models.tables import User, Post
 from app.models.users.forms import RegistrationForm, LoginForm, UpdateAccountForm
 
 users = Blueprint('users', __name__)
@@ -53,13 +53,10 @@ def logout():
 @login_required
 def user(username):
     user = User.query.filter_by(username=username).first()
+    posts = Post.query.filter_by(user_id=user.id).all()
     if user == None:
         flash('User %s not found.' % username)
         return redirect(url_for('main.index'))
-    posts = [
-        {'author': user, 'body': 'Test post #1'},#Dar um jeito de colocar posts aqui
-        {'author': user, 'body': 'Test post #2'}
-    ]
     return render_template('user.html',
                            user=user,
                            posts=posts)
