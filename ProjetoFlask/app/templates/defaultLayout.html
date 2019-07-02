@@ -32,23 +32,29 @@
 			</div>
 
 			<ul id="barra_navegação" class="nav navbar-nav navbar-right collapse navbar-collapse cor-fonte">
-				{% if current_user.is_authenticated %}
+                {% if current_user.is_admin %}
+                    <li><a href="{{ url_for('main.index') }}">Início</a></li>
+                    <li><a href="{{ url_for('users.account') }}">Minha Conta</a></li>
+                    <li><a href="{{ url_for('main.admin') }}">Administrar</a></li>
+                    <li><a href="{{ url_for('users.create_admin') }}">Criar Administrador</a></li>
+                    <li><a href="{{ url_for('users.logout') }}">Sair</a></li>
+				{% elif current_user.is_authenticated %}
                     <li><a href="{{ url_for('main.index') }}">Início</a></li>
                     <li><a href="{{ url_for('main.noticias') }}">Noticias</a></li>
                     <li><a href="{{ url_for('main.topMusicas') }}">Top Músicas</a></li>
                     <li><a href="{{ url_for('main.topArtistas') }}">Top Artistas</a></li>
                     <li><a href="{{ url_for('main.contato') }}">Contato</a></li>
-                    <li><a href="{{ url_for('users.account') }}">Account</a></li>
-                    <li><a href="{{ url_for('posts.new_post') }}">New Post</a></li>
-                    <li><a href="{{ url_for('users.logout') }}">Logout</a></li>
+                    <li><a href="{{ url_for('users.account') }}">Minha Conta</a></li>
+                    <li><a href="{{ url_for('posts.new_post') }}">Nova Postagem</a></li>
+                    <li><a href="{{ url_for('users.logout') }}">Sair</a></li>
                 {% else %}
                     <li><a href="{{ url_for('main.index') }}">Início</a></li>
                     <li><a href="{{ url_for('main.noticias') }}">Noticias</a></li>
                     <li><a href="{{ url_for('main.topMusicas') }}">Top Músicas</a></li>
                     <li><a href="{{ url_for('main.topArtistas') }}">Top Artistas</a></li>
                     <li><a href="{{ url_for('main.contato') }}">Contato</a></li>
-                    <li><a href="{{ url_for('users.login') }}">Log In</a></li>
-                    <li><a href="{{ url_for('users.register') }}">Register</a></li>
+                    <li><a href="{{ url_for('users.login') }}">Entrar</a></li>
+                    <li><a href="{{ url_for('users.register') }}">Registrar</a></li>
                 {% endif %}
 			</ul>
 

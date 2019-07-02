@@ -34,3 +34,8 @@ def contato():
 @main.route('/defaultLayout')
 def layout():
     return render_template('defaultLayout.html')
+
+@main.route('/admin')
+def admin():
+    return render_template('app/templates/admin/index.html')
+

@@ -5,7 +5,7 @@
 {% block content %}
 
     <div class="container.fluid col-md-2 col-md-offset-5">
-    <h2 class="text-uppercase text-center">Register</h2>
+    <h2 class="text-uppercase text-center">Cadastro</h2>
     <form action="" method="POST">
 
         {{ form.csrf_token }}
@@ -74,7 +74,7 @@
 
         <div class="form-group formulario row">
             <small class="text-muted">
-                Already have an account? <a class="ml-2" href="{{url_for('users.login')}}">Log In</a>
+                Já tem uma conta? <a class="ml-2" href="{{url_for('users.login')}}">Entrar</a>
             </small>
         </div>
 

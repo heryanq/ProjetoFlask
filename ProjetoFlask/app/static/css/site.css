@@ -20,6 +20,11 @@ body {
     color: yellow;
 }
 
+.cor-fonte2 {
+    color: black;
+    font-family: 'Barlow', sans-serif;
+}
+
 .img-padrao {
     height: 359px;
     width: 351px;

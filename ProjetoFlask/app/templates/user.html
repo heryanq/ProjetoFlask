@@ -2,17 +2,26 @@
 
 {% block content %}
 
+    <hr>
+
     <div class="col-md-6 col-md-offset-3 container.fluid">
         <div class="col-md-offset-4 row">
             <img class="img-circle account-img" src="{{ image_file }}">
             <div>
-                <h2 class="account-heading">{{ current_user.username }}</h2>
-                <p class="text-secondary">{{ current_user.email }}</p>
+                <h2 class="account-heading">{{ user.username }}</h2>
+                <p class="text-secondary">{{ user.email }}</p>
+                <p>{{ user.friendships.count() }} amigos |
+                    {% if not current_user.is_friend(user) %}
+                        <a href="{{ url_for('users.friend', username=user.username) }}">Adicionar</a>
+                    {% else %}
+                        <a href="{{ url_for('users.unfriend', username=user.username) }}">Desfazer Amizade</a>
+                    {% endif %}
+                </p>
             </div>
         </div>
     </div>
 
-  <h1>User: {{ user.username }}</h1>
+  <h1>Posts de {{ user.username }}</h1>
   <hr>
   {% for post in posts %}
       {% include 'userPosts.html' %}

@@ -20,6 +20,7 @@ from app.models import tables
 from app.controllers.users.routes import users
 from app.controllers.posts.routes import posts
 from app.controllers.main.routes import main
+from app.models.tables import admin
 
 app.register_blueprint(users)
 app.register_blueprint(posts)
